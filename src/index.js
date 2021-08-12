@@ -10,6 +10,7 @@ import ReactDOM from "react-dom"
 
 import App from "./App"
 import "./estilo.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //4) Tener una función render corriendo
 //ReactDOM.render (a, document.querySelector("#root"))
