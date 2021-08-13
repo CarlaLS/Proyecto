@@ -17,3 +17,8 @@ h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(59, 59, 57);
 }
+
+.material-icons {
+  color: aliceblue;
+  width: 100%;
+}
