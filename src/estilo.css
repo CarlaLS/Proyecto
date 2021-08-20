@@ -12,13 +12,63 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(223, 219, 219);
 }
+
 h2 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(59, 59, 57);
 }
 
+
+h5 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #505052c2;
+
+}
+
+/* .producto {
+  margin-top: 15%;
+} */
+
 .material-icons {
   color: aliceblue;
   width: 100%;
+}
+
+
+.button {
+  background-color: rgba(131, 128, 128, 0.308);
+  width: 90%;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  box-shadow: 5px 5px 5px 0;
+}
+
+.boton {
+  box-shadow: 5px 5px 5px 0;
+  border-radius: 10px;
+
+
+}
+
+.container {
+  display: flex;
+  margin: 0px;
+  justify-content: space-around;
+  padding: 0px 5px 5px 5px;
+  width: 10%;
+  text-align: center;
+}
+
+.contador {
+
+  margin-top: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
 }
