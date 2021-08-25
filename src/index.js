@@ -8,6 +8,7 @@ import ReactDOM from "react-dom"
 
 //3) Tener un elemento de React
 
+
 import App from "./App"
 import "./estilo.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
