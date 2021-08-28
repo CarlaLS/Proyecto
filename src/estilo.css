@@ -73,3 +73,6 @@ h5 {
   color: red;
 }
 
+.item {
+list-style-type: none;
+}

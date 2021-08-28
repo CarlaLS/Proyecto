@@ -6,10 +6,10 @@
 //   const { productoA, productoB, productoC } = props
 
 import { useEffect, useState }from "react";
+import {ItemList}from "./ItemList";
 
 
-
-  const promiseItemListContainer = () => {
+ export const promiseItemListContainer = () => {
     return new Promise ((resolve,reject) =>{
         setTimeout (
           ()=>
@@ -24,13 +24,14 @@ import { useEffect, useState }from "react";
     });
 
 }
-export const ItemListContainer = () => {
+      const ItemListContainer = () => {
   const [dataToShow, SetDataToShow]= useState([]);
 
   useEffect ( () => {
-      promiseItemListContainer().then ((data)=>{     // eslint-disable-next-line no-unused-expressions
-        let aux = data.filter(ItemList => ItemList.destacado)
+      promiseItemListContainer().then ((data)=>{ 
+        let aux = data.filter(producto => producto.destacado)
         SetDataToShow(aux);
+      
 });
 
 }, []);
@@ -38,13 +39,13 @@ export const ItemListContainer = () => {
 return dataToShow.length === 0 ? (
       <h5>Cargando....</h5>
   ) : (
-      <ul>
-          {dataToShow.map ((Item)=> (
-          <li  key= {Item.id}><h5>{Item.nombre}</h5></li>
 
-          ))}  
-      </ul>
-  )
+      <ItemList dataToShow= {dataToShow}/>
+      )
+
+    
+  
+    
 
 }
 
