@@ -1,9 +1,8 @@
 
-export const Item =({data}) => {
+export const Item =({productos}) => {
 
     return (
- <li className="item"><h5>{data.nombre}</h5></li>
-        
+ <li className="item"><h5>{productos.nombre}</h5></li>    
         
     
       

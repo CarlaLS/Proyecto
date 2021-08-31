@@ -1,20 +1,20 @@
+
+
 import {Item} from "./Item"
 
-export const ItemList =({dataToShow}) => {
+export const ItemList = ({productos}) => {
 
-    return (
-        <ul>
-        
-        {dataToShow.map ((data)=> (
-         <Item key={data.id}data={data}/>
-        )
+    return productos.length === 0 ? (
+    <h5>Cargando....</h5>
+    ) : (
+         <div>
+          {productos.map ((productos) => (
+         <Item key={productos.id} productos={productos}/>
+))}
+         </div>
 
-        )
+    )
+    
 }
-    </ul>
-    
-      
-    
-)
-    }
+
 export default ItemList
