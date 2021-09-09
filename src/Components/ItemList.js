@@ -8,8 +8,8 @@ export const ItemList = ({productos}) => {
     <h5>Cargando....</h5>
     ) : (
          <div>
-          {productos.map ((productos) => (
-         <Item key={productos.id} productos={productos}/>
+          {productos.map ((producto) => (
+         <Item key={producto.id} producto={producto}/>
 ))}
          </div>
 
