@@ -3,7 +3,7 @@ import {ItemDetail}from "./ItemDetail";
 import { useParams } from "react-router";
 
 
-// const id= "01"
+
 const ItemDetailContainer =() => {
 
   const [producto, setProducto] = useState ([])
@@ -25,6 +25,7 @@ const ItemDetailContainer =() => {
     <div>
         <h2 className="titulo mt-5">Detalle del producto</h2>
         <ItemDetail producto = {producto}/>
+       
     </div>
     )
 }

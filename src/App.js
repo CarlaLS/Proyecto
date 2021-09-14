@@ -11,16 +11,18 @@ const App = () => {
     return (
     <BrowserRouter>
         <NavBarComponente/>
-        
+        <main>
         <Switch>
            
-        <Route path="/" component ={ItemListContainer} exact/>
-        <Route path ="/categoria/:id" component={ItemListContainer}/>
-
-        <Route path="/item/:id" component = {ItemDetailContainer}/>
-
-        </Switch>
-        
+           <Route path="/" component ={ItemListContainer} exact/>
+           <Route path ="/categoria/:id" component={ItemListContainer}/>
+   
+           <Route path="/item/:id" component = {ItemDetailContainer}/>
+   
+           </Switch>
+           
+        </main>
+      
      </BrowserRouter>
         
     )

@@ -1,8 +1,19 @@
 import {} from 'react-bootstrap'
-
-
+import ItemCount from "./ItemCount";
+import { useState } from 'react';
+import {Link } from 'react-router-dom';
 
 export const ItemDetail = ({producto}) => {
+
+const [buttonIsClicked, setButtonIsClicked] = useState(false)
+
+
+const onAdd =(cantidad) => {
+    const producto_nuevo= {...producto, cantidad}
+console.log (producto_nuevo)
+    setButtonIsClicked (true)
+}
+
 return producto.length === 0 ? (
     <h5>Cargando....</h5>
     ): (
@@ -25,12 +36,19 @@ return producto.length === 0 ? (
                             <td>{producto.nombre}</td>
                             <td>{producto.descripcion}</td>
                             <td><img src={`https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942/${producto.img}`} alt={producto.nombre} className="Imagen"/></td>
-                            <td> ${producto.precio}</td>
+                            <td> ${producto.precio}</td>     
                     </tr>
+                 
                     </tbody>
                </table>
+               <div>
+               { buttonIsClicked ? <Link to="/cart"> Terminar compra </Link> : <ItemCount  stock ={5} initial ={1} onAdd ={onAdd} /> }
+        
+               </div>
+              
             </div>
         </div>
     </div>    
-    )}
+    )
+}
 export default ItemDetail
