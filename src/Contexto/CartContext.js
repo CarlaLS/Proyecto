@@ -10,21 +10,19 @@ const [carrito, setCarrito] = useState ([])
 
 const agregarProducto = (producto, cantidad) => {
     if (inInCart(producto.id)) {
-        const newCarrito = carrito.map ((cartElement) => {
-            if (cartElement.id ===producto.id) {
-                return {
-                    ...cartElement,
-                    cantidad: cartElement.cantidad + cantidad,
-                };
+        const newCarrito = [...carrito]; 
+        newCarrito.forEach (e => {
+
+            if (e.producto.id ===producto.id) {
+            
+                    e.cantidad += cantidad 
+                }
         
        
-
-        } else return cartElement; 
     });
-        
-           setCarrito (newCarrito);
+        setCarrito (newCarrito);
     } else {
-        setCarrito ((prev) => [...prev, {...producto, cantidad}]); 
+        setCarrito ([...carrito, {producto, cantidad}]); 
     }
      
              
