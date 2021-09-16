@@ -5,12 +5,14 @@ import ItemListContainer from "./Components/ItemListContainer";
 
 import ItemDetailContainer from "./Components/ItemDetailContainer";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import CustomProvider from "./Contexto/CartContext";
 
 
 const App = () => {
     return (
     <BrowserRouter>
-        <NavBarComponente/>
+    <CustomProvider>
+    <NavBarComponente/>
         <main>
         <Switch>
            
@@ -23,6 +25,8 @@ const App = () => {
            
         </main>
       
+    </CustomProvider>
+        
      </BrowserRouter>
         
     )

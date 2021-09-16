@@ -1,16 +1,20 @@
 import {} from 'react-bootstrap'
 import ItemCount from "./ItemCount";
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import {Link } from 'react-router-dom';
+import { CartContext } from '../Contexto/CartContext';
 
 export const ItemDetail = ({producto}) => {
 
-const [buttonIsClicked, setButtonIsClicked] = useState(false)
+    const {agregarProducto}= useContext(CartContext);
 
 
-const onAdd =(cantidad) => {
+    const [buttonIsClicked, setButtonIsClicked] = useState(false)
+
+
+    const onAdd =(cantidad) => {
     const producto_nuevo= {...producto, cantidad}
-console.log (producto_nuevo)
+    agregarProducto (producto_nuevo)
     setButtonIsClicked (true)
 }
 

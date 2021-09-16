@@ -38,11 +38,7 @@ const ItemListContainer =() => {
         
         setProductos(resultado);
         
-    // obtenerProductos().then ((productos) => {
-    //   let resultado = productos.filter(producto => producto.categoria)
-    //   setProductos(resultado)
-    // })  
-  });
+     });
 },[id]); 
   return (
     <>
