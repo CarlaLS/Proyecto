@@ -1,14 +1,17 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext} from "react";
 export const CartContext = createContext ()
 
+export const useCartContext = () => useContext (useCartContext)
 const {Provider} = CartContext
 
 
-const CustomProvider =({children}) => {
+ export const CustomProvider =({children}) => {
 
 const [carrito, setCarrito] = useState ([])
 
 const agregarProducto = (producto, cantidad) => {
+
+
     if (inInCart(producto.id)) {
         const newCarrito = [...carrito]; 
         newCarrito.forEach (e => {
@@ -17,16 +20,17 @@ const agregarProducto = (producto, cantidad) => {
             
                     e.cantidad += cantidad 
                 }
-        
        
     });
         setCarrito (newCarrito);
+
     } else {
         setCarrito ([...carrito, {producto, cantidad}]); 
     }
-     
-             
+           
 };
+
+
 
 const eliminarProducto= (id) => {
     const nuevoestadocarrito= carrito.filter (producto => producto.id !==id )
@@ -38,7 +42,7 @@ const clear =() => {
 }
 
 const inInCart =(id) => {
-   return carrito.find (producto => producto.id === id)
+   return carrito.find ((producto) => producto.producto.id === id)
 
 }
 
@@ -47,8 +51,8 @@ const CartContext = {
     agregarProducto,
     eliminarProducto,
     clear, 
-    inInCart
-
+    inInCart,
+        
 }
 
 return (
