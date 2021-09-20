@@ -19,6 +19,7 @@ const agregarProducto = (producto, cantidad) => {
             if (e.producto.id ===producto.id) {
             
                     e.cantidad += cantidad 
+                    
                 }
        
     });
@@ -37,9 +38,21 @@ const eliminarProducto= (id) => {
     setCarrito (nuevoestadocarrito)
 }
 
-const clear =() => {
-    setCarrito  ([])
-}
+const clear =() => setCarrito  ([]);
+
+let totalItems = carrito.reduce ((acc, producto) =>{
+        return acc + producto.cantidad;
+    }, 0),
+
+ 
+precioTotal = () => {
+const number = carrito.reduce ((acc, producto) => {
+        return acc + producto.precio * producto.cantidad;
+    }, 0)
+    .toFixed (2);
+    return number;   
+
+};
 
 const inInCart =(id) => {
    return carrito.find ((producto) => producto.producto.id === id)
@@ -52,6 +65,8 @@ const CartContext = {
     eliminarProducto,
     clear, 
     inInCart,
+    precioTotal,
+    totalItems
         
 }
 

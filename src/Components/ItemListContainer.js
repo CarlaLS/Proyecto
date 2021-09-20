@@ -23,7 +23,7 @@ const ItemListContainer =() => {
   //   }, [id])
   // }
   useEffect (()=>{
-    fetch('https://mocki.io/v1/2c914cfb-39b0-4f31-9e9e-277c5c5ad1a1')
+    fetch('https://mocki.io/v1/83f513d4-dacd-4c39-b165-a2fc72308a83')
       .then(response =>response.json())
       .then ((productos)=>{
         

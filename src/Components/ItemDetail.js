@@ -1,15 +1,17 @@
 import {} from 'react-bootstrap'
 import ItemCount from "./ItemCount";
-import { useState, useContext} from 'react';
+import { useState} from 'react';
 import {Link } from 'react-router-dom';
-import { CartContext} from '../Contexto/CartContext';
+import { useCartContext} from '../Contexto/CartContext';
+
 
 export const ItemDetail = ({producto}) => {
 
-    const {agregarProducto}= useContext(CartContext);
+    const {agregarProducto}= useCartContext;
 
     const [buttonIsClicked, setButtonIsClicked] = useState(false)
 
+   
 
     const onAdd =(cantidad) => {
              const producto_nuevo= {...producto, cantidad}
@@ -47,7 +49,7 @@ return producto.length === 0 ? (
                     </tbody>
                </table>
                <div>
-               {buttonIsClicked ? <Link to="/cart"> Terminar compra </Link> : <ItemCount  stock ={5} initial ={1} onAdd ={onAdd} /> }
+               {buttonIsClicked ? <Link to="/cart">   <button>Comprar</button> </Link> : <ItemCount  stock ={5} initial ={1} onAdd ={onAdd}/> }
         
                </div>
               
@@ -57,3 +59,7 @@ return producto.length === 0 ? (
     )
 }
 export default ItemDetail
+
+
+
+
