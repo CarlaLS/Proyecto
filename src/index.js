@@ -12,7 +12,9 @@ import ReactDOM from "react-dom"
 import App from "./App"
 import "./estilo.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'boxicons'
+
 
 //4) Tener una función render corriendo
 //ReactDOM.render (a, document.querySelector("#root"))
-ReactDOM.render(<App/>, document.getElementById('root'))
+ReactDOM.render(<App/>,document.getElementById('root'))

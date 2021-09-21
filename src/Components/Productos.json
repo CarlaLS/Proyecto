@@ -5,6 +5,7 @@
     "categoria": "Abrigos", 
     "descripcion":"Realizado en Sarga Color Dulce de Leche.Entallado.Con Solapa Amplia, Bolsillos Laterales. La Prenda Se Encuentra Completamente Forrada.",
     "precio": 3500, 
+    "stock": 5,
     "img": "https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942"
 },
 {
@@ -14,6 +15,7 @@
     "categoria": "Chalecos",
     "descripcion":"Chaleco Sastrero Realizado en Punto Roma. De Silueta Suelta.Con solapa, Bolsillos Con Ojales Y Botones Forrados. La Prenda Se Encuentra Completamente Forrada." ,
     "precio": 2500, 
+    "stock": 5,
     "img": "https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942"
     
 },
@@ -24,6 +26,7 @@
     "categoria": "Abrigos",
     "descripcion":"Campera Realizada en Punto Roma.Cierre de Calidad Premium.Con Cuello Alto, Bolsillos Laterales Con Tapa y Bolsillo Paqué. Botones Forrados. Detalle en Puño y Hombros. La Prenda Se Encuentra Completamente Forrada." ,
     "precio": 3000, 
+    "stock": 5,
     "img": "https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942"
 },
 {
@@ -33,6 +36,7 @@
 "categoria":"Chalinas",
 "descripcion":"Chalinas Tejidas en Telar con Lanas de Alta Calidad. Diseños Exclusivos. 100% Artesanales." ,
 "precio": 2000, 
+"stock": 5,
 "img": "https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942"
 }
 ]

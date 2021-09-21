@@ -7,15 +7,15 @@ import { useCartContext} from '../Contexto/CartContext';
 
 export const ItemDetail = ({producto}) => {
 
-    const {agregarProducto}= useCartContext;
+    const {agregarProducto}= useCartContext();
 
     const [buttonIsClicked, setButtonIsClicked] = useState(false)
 
    
 
     const onAdd =(cantidad) => {
-             const producto_nuevo= {...producto, cantidad}
-            agregarProducto (producto_nuevo, cantidad)
+             const itemCarrito= {...producto, cantidad}
+            agregarProducto(itemCarrito, cantidad)
             setButtonIsClicked (true)
            
            
