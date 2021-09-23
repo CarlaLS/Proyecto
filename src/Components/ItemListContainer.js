@@ -2,7 +2,7 @@
 import {useState, useEffect }from "react";
 import {ItemList}from "./ItemList";
 import { useParams } from "react-router";
-
+import getStore from "../ReactFireBase";
 
 const ItemListContainer =() => {
 
@@ -23,23 +23,82 @@ const ItemListContainer =() => {
   //   }, [id])
   // }
   useEffect (()=>{
-    fetch('https://mocki.io/v1/83f513d4-dacd-4c39-b165-a2fc72308a83')
-      .then(response =>response.json())
-      .then ((productos)=>{
+
+    const firestore = getStore()
+
+    const collection = firestore.collection("Productos")
+
+    if (!id) {
+        const query = collection.get()
+
+   query.then((snapshot) => {
+
+                const documentos = snapshot.docs
+
+                const productos = documentos.map((doc) => {
+
+                return { id: doc.id, ...doc.data() }
+
+                })
+setTimeout(() => {
+
+ 
+setProductos(productos)
+
+                }, 2000)
+
+            })
+
+            .catch((error) => {
+
+                console.log(error)
+            })
+
+    } else {
+
+        let query = collection.where("categoria", "==", id)
+
+        query = query.get()
+        query.then((snapshot) => {
+
+                const documentos = snapshot.docs
+
+                const productos = documentos.map((doc) => {
+
+                    return { id: doc.id, ...doc.data() }
+
+                })
+                setProductos(productos)
+            })
+
+            .catch((error) => {
+
+                console.log(error)
+
+            })
+
+    }
+
+
+
+//     fetch('https://mocki.io/v1/83f513d4-dacd-4c39-b165-a2fc72308a83')
+//       .then(response =>response.json())
+//       .then ((productos)=>{
         
-        let resultado 
-        if (id) {
-          resultado = productos.filter(producto => producto.categoria === id)
+//         let resultado 
+//         if (id) {
+//           resultado = productos.filter(producto => producto.categoria === id)
         
-        }else {
-          resultado = productos
-        }
+//         }else {
+//           resultado = productos
+//         }
 
         
-        setProductos(resultado);
+//         setProductos(resultado);
         
-     });
-},[id]); 
+//      });
+},[id])
+
   return (
     <>
        <h2 className="titulo mt-5">Nuestros Productos</h2>

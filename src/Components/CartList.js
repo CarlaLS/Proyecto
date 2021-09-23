@@ -20,17 +20,9 @@ const CartList = ({ producto, eliminarProducto}) => {
                 </tbody>
            </table>
            <div>
-    {/* <div>
-      <li>
-        <span>{producto.cantidad} x </span> {producto.producto.precio}{" "}
-        <span> $ {parseInt(producto.producto.precio) * parseInt(producto.cantidad).toFixed(2)}</span>{" "} */}
-
+ 
         <button onClick={() => {
-            eliminarProducto(producto.id);
-          }}>
-          X
-        </button>
-      {/* </li> */}
+            eliminarProducto(producto.id); }}> X </button>
     </div>
   </div>
   </div>

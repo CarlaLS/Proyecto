@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 const NavBarComponente = () => {
 
-
   return (
     <header>
       <div className="header">
@@ -13,8 +12,6 @@ const NavBarComponente = () => {
       <h1 className="titulo"> Möne Pret a Porter</h1>
         <h2 className="titulo">Indumentaria Femenina</h2>
       </NavLink>
-        
-        
       </div>
       
       <Navbar bg="dark" variant="dark">
@@ -31,15 +28,6 @@ const NavBarComponente = () => {
 
 
 </Navbar>
-
-
-
-    
-     
-
-      
-      
-     
     </header>
   )
 }

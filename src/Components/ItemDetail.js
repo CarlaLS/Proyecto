@@ -8,17 +8,12 @@ import { useCartContext} from '../Contexto/CartContext';
 export const ItemDetail = ({producto}) => {
 
     const {agregarProducto}= useCartContext();
-
     const [buttonIsClicked, setButtonIsClicked] = useState(false)
-
-   
 
     const onAdd =(cantidad) => {
              const itemCarrito= {...producto, cantidad}
-            agregarProducto(itemCarrito, cantidad)
-            setButtonIsClicked (true)
-           
-           
+             agregarProducto(itemCarrito, cantidad)
+             setButtonIsClicked (true)    
 }
     
 return producto.length === 0 ? (
@@ -30,7 +25,6 @@ return producto.length === 0 ? (
                 <table className="table table-dark">
                     <thead className="thead-white">
                         <tr> 
-                            <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Descripción</th>
                             <th scope="col">Imagen</th>
@@ -39,13 +33,11 @@ return producto.length === 0 ? (
                     </thead>
                     <tbody>
                             <tr key ={producto.id}>
-                            <td>{producto.id}</td>
                             <td>{producto.nombre}</td>
                             <td>{producto.descripcion}</td>
                             <td><img src={`https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942/${producto.img}`} alt={producto.nombre} className="Imagen"/></td>
                             <td> ${producto.precio}</td>     
-                    </tr>
-                 
+                    </tr>  
                     </tbody>
                </table>
                <div>

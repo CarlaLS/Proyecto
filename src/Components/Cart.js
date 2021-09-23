@@ -43,17 +43,6 @@ useEffect (() => {
                </div>
         )}
       </div>
-      // <div className="carritos">
-      //   <div className="carrito">
-      //     <div className="carrito-close">
-      //       <box-icon name="x"></box-icon>
-      //     </div>
-      //     <h2> Su Carrito</h2>
-      //     <div className="carrito-center">
-      //       <div className="carrito-item"></div>
-      //     </div>
-      //   </div>
-      // </div>
   )
 };
 
