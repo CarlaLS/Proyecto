@@ -7,6 +7,7 @@ import getStore from "../ReactFireBase";
 const ItemDetailContainer =() => {
 
   const [producto, setProducto] = useState ([])
+
   const {id} = useParams ()
 
   useEffect (()=>{
@@ -15,7 +16,8 @@ const ItemDetailContainer =() => {
     const collection = firestore.collection("Productos")
     let query = collection.doc(id).get()
 
-            query.then(doc => {
+            query
+            .then(doc => {
 
                     if (doc.exists) {
 

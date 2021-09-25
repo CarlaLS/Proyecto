@@ -7,6 +7,7 @@ import getStore from "../ReactFireBase";
 const ItemListContainer =() => {
 
   const [productos, setProductos] = useState ([])
+ 
   const {id} = useParams()
 
   // const obtenerProductos=() => {
@@ -40,6 +41,7 @@ const ItemListContainer =() => {
                 return { id: doc.id, ...doc.data() }
 
                 })
+
 setTimeout(() => {
 
  
@@ -68,6 +70,7 @@ setProductos(productos)
                     return { id: doc.id, ...doc.data() }
 
                 })
+  
                 setProductos(productos)
             })
 
@@ -102,7 +105,9 @@ setProductos(productos)
   return (
     <>
        <h2 className="titulo mt-5">Nuestros Productos</h2>
+       {/* {loading ? <p> Cargando....</p> : null} */}
        <ItemList productos = {productos}/>
+       
     </>
   )
 }  
