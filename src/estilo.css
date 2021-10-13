@@ -1,134 +1,456 @@
-.header {
-  background-image: linear-gradient(to bottom, black, grey, white);
-  
 
+.app {
+  max-width: 1550px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-shadow: 0 5px 6px #5e6462a4;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
-.titulo {
-  margin-top: 0px;
-  padding-top: 10;
-  text-decoration: none;
-}
-.navlink {
-  text-decoration: none;
-  /* width: 80%;
-  /* min-height: 100px; */
-  /* max-width: 1530px; */
-  /* overflow: hidden; */
-  /* display: flex; */
-  /* justify-content: space-around;
+
+header{
+  width: 97%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
-  position: fixed;  */
+  position: fixed;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0 5px 10px #748db3;
 
+} 
 
-}
+.portada {
+  width: 99.25%;
+  margin-top: 60px;
+} 
 
-.active {
+ .navlink {
   text-decoration: none;
-  padding: 20px;
-  color: rgb(223, 219, 219);
-
-
-
-}
-h1 {
-  text-align: center;
+  color:  rgb(12, 12, 12);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(223, 219, 219);
+  display: block;
+  padding: 0 10px;
+ } 
+
+ .navbar-ul {
+   display:flex;
+   justify-content: space-between; 
+   padding-top: 8px; 
+   list-style-type: none;
+
+ }
+
+ul ul {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  background-color:transparent;
+  border-top: 0.5px solid black;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+.navlink:hover{
+  color: rgb(73, 73, 110);
+}
+
+
+ul li:hover > ul {
+  display: flex;
 }
 
 h2 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(59, 59, 57);
+  color: rgb(46, 46, 39);
+  padding-top: 20px; 
+
 }
 
-
+h4 {
+  text-align: center; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(59, 59, 57);
+}
 h5 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #1d1dd4c2;
+  color: #383841c2;
 
+} 
+
+h6 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #383841c2;
+
+} 
+
+
+.logo {
+  width: 35px; 
+  
 }
 
-/* .producto {
-  margin-top: 15%;
-} */
+.cartwidget{
+  padding-top: 30px;
+}
 
 .material-icons {
-  color: aliceblue;
+  color:  rgb(21, 22, 22);
+  width: 45px;
+  height: 45px;
+  
 }
 
-/* .total-items {
+
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+ .total-items {
   list-style-type: none;
-  position: absolute;
+  position:absolute;
   top: -1rem;
-  right: -1.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid rgb(255, 80, 89);
-  border: 50%;
+  right: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(252, 250, 250);
+  padding: 0px;
+  font-size: 1.2rem;
+  font-weight: 450;
+  background-color: rgb(138, 6, 6);
+  
+} 
 
-} */
 
-.button {
-  background-color: rgba(131, 128, 128, 0.308);
-  width: 90%;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-right: auto;
-  margin-bottom: 10px;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 5px;
-  box-shadow: 5px 5px 5px 0;
+.spinner {
+width: 5%;
 }
 
-.boton {
-  box-shadow: 5px 5px 5px 0;
-  border-radius: 10px;
-
-
+.imgspinner{
+text-align: center;
+list-style-type: none;
+margin-top: 60px;
 }
 
-.container {
+.productos {
+  margin: auto;
+  width: 97%;
   display: flex;
-  margin: 0px;
   justify-content: space-around;
-  padding: 0px 5px 5px 5px;
-  width: 10%;
+  flex-wrap: wrap;
+  box-shadow:1px 10px 10px 2px rgba(0,0,0,0.2);
+  border: 6px solid transparent;
+  border-radius: 5px;
+
+}
+
+
+.cardProduct{
+  width: 250px;
+  border: 2px solid transparent;
+  padding: 15px;
+  margin: 30px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:1px 10px 10px 2px rgba(0,0,0,0.2);
+  border-radius: 5px;
+} 
+ .cardProduct:hover {
+  border: 2px solid  rgb(52, 55, 58);
+ }
+
+
+
+.agregarcarritobtn {
+  
+  background-color: transparent;
   text-align: center;
-}
-
-.contador {
-
-  margin-top: 5px;
+  align-items: center;
+  color:  rgb(42, 44, 46);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: red;
+  list-style: none;
+  text-decoration: none;
+  justify-items: center;
+  margin-right: auto; 
+  margin-left: auto;
+  display: block;
+  margin-top: 30px;
+  
 }
+
+.agregarcarritobtn:hover {
+  background-color: black;
+  color: blanchedalmond;
+}
+
+.comprarbtn {
+
+  background-color: transparent;
+  text-align: center;
+  align-items: center;
+  color:  rgb(42, 44, 46);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  list-style: none;
+  justify-items: center;
+  margin-right: auto; 
+  margin-left: auto;
+  display: flex;
+  margin-top: 30px;
+}
+
+.comprarbtn:hover{
+  background-color: black;
+  color: blanchedalmond;
+}
+
+.comprarlink{
+  text-decoration: none;
+}
+
+
+.itemcount{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content:space-between;
+  border:0.5px solid grey;
+  width: 30%;
+  align-items: baseline;
+  
+}
+
+.btncontador:hover {
+  cursor: pointer;
+}
+.btncontador {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 0px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color:transparent;
+  width: 33%;
+} 
+
+.contador{
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(24, 21, 21);
+  font-weight: bold;
+  text-align: center;
+  border-left: 0.5px solid grey;
+  border-right:0.5px solid grey;
+  width: 33%;
+ 
+}
+
+
 
 .item {
 list-style-type: none;
 }
 
-.Imagen {
-  width: 20%;
+.imagen {
+  width: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  
+} 
+
+
+.carritovacio{
+  padding-top: 100px;
 }
 
-.ver{
-  background-color: rgba(102, 101, 101, 0.308);
-  width: 90%;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-right: auto;
-  margin-bottom: 10px;
+.orden{
+  padding-top: 100px;
   text-align: center;
-  color: aliceblue;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 5px;
-  box-shadow: 5px 5px 5px 0;
 }
+
+ .verMas{
+  background-color: transparent;
+  text-align: center;
+  align-items: center;
+  color:  rgb(42, 44, 46);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  justify-items: center;
+  margin-right: auto; 
+  margin-left: auto;
+  
+ }  
+
+.verMas:hover{
+  background-color: black;
+  color: blanchedalmond;
+}
+
+.cargar{
+  padding-top: 200px;
+}
+
+
+ .imagen2 {
+ width: 270px;
+
+} 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "PortadaImagen Nombre-Info"
+    "PortadaImagen Precio-Contador";
+}
+
+.PortadaImagen { grid-area: PortadaImagen;
+  margin-right: auto;
+  margin-left: auto;
+ }
+
+.Nombre-Info { grid-area: Nombre-Info; }
+
+.Precio-Contador { grid-area: Precio-Contador; }
+
+.descripcion{
+  padding-top: 50px;
+}
+
+
+ .imagen3 {
+  width: 50%;
+  
+  min-height: 200px;
+  max-height: 450px;
+  
+} 
+
+
+.imagen4 {
+
+  min-height: 200px;
+  max-height: 200px;
+  margin-right: auto;
+  margin-left: 260px;
+
+  
+} 
+.container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Imagen Cantidadprecio";
+}
+
+.Imagen { grid-area: Imagen; }
+
+.Cantidadprecio {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    "Cantidad Subtotal Borrar"
+    "Cantpreciounit PrecioSubtotal BorrarItem";
+  grid-area: Cantidadprecio;
+}
+
+.Cantidad { grid-area: Cantidad; }
+
+.Subtotal { grid-area: Subtotal; }
+
+.Borrar { grid-area: Borrar; }
+
+.Cantpreciounit { grid-area: Cantpreciounit;
+  text-align: center; }
+
+.PrecioSubtotal { grid-area: PrecioSubtotal;
+  text-align: center; }
+
+.BorrarItem { grid-area: BorrarItem; 
+text-align: center;}
+
+
+.BorrarItem:hover {
+  cursor: pointer;
+}
+.preciototal{
+ margin-left: 830px;
+  display: flex;
+  
+}
+.clear{
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(138, 6, 6);
+}
+
+
+.clear:hover {
+  cursor: pointer;
+}
+
+.form {
+  
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  padding: 0px; }
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  margin: 9px auto; }
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 25px; }
+
+input, textarea {
+  width: 100%;
+  padding: 8px 0px 0px 5px;
+  border: none;
+  border-bottom: 3px solid grey;
+  color: black;
+  font-size: 16px;
+  font-weight: 400; }
+
+:focus {
+  outline: none; }
+
+  .imgGraciasXCompra{
+
+    width: 25%;
+    margin-left: 500px;
+    margin-bottom: auto;
+  }
