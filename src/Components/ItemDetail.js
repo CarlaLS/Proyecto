@@ -20,16 +20,16 @@ return producto.length === 0 ? (
     <div className="imgspinner">  <img src="https://th.bing.com/th/id/R.68a0a985a1b931ab4614c29bdf3cfbc9?rik=%2fXbz2OY9VR8y9A&pid=ImgRaw&r=0" alt="" className="spinner"></img></div>
     ): (
 
-      <div class="container">
-  <div class="PortadaImagen">
+      <div className="container">
+  <div className="PortadaImagen">
     <img src={producto.img} alt={producto.nombre} className="imagen2"/>
   </div>
-  <div class="Nombre-Info">
+  <div className="Nombre-Info">
     <h4>{producto.nombre}</h4>
 
     <h6 className="descripcion">{producto.descripcion}</h6>
   </div>
-  < div class="Precio-Contador">
+  < div className="Precio-Contador">
   <h4>${producto.precio}</h4>
   {buttonIsClicked ? <Link className="comprarlink" to="/cart">   <button className="comprarbtn">Comprar</button> </Link>: <ItemCount  stock ={5} initial ={1} onAdd ={onAdd}/> }
 </div>

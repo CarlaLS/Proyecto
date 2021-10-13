@@ -35,14 +35,14 @@ useEffect (() => {
                   <CartList
                      itemCarrito= {itemCarrito}
                      eliminarProducto={eliminarProducto}
-                     key={itemCarrito.id}
+                     key={itemCarrito.producto.id}
                   />
                 );
               })}
             </ul>
               <div className="preciototal">
               <div ><h5>Precio Total: AR$ {precioTotal()}</h5></div>
-               <div className="clear" onClick={() => clear()}><FaTrashAlt/><h8>Borrar Todo</h8></div>
+               <div className="clear" onClick={() => clear()}><FaTrashAlt/><p>Borrar Todo</p></div>
               </div>
              <div style={{padding: "20px"}}>
              <Link className="comprarlink" to="/formulario/"><button className="comprarbtn">Continuar Compra</button> </Link>
