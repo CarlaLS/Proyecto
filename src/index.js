@@ -11,8 +11,7 @@ import ReactDOM from "react-dom"
 
 import App from "./App"
 import "./estilo.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'boxicons'
+
 
 
 //4) Tener una función render corriendo

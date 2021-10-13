@@ -7,7 +7,7 @@ import { useCartContext } from "../Contexto/CartContext";
 
 
 const FormularioOrden = () => {
-  const { carrito, precioTotal, setOrden, setCarrito, orden } = useCartContext();
+  const { carrito, precioTotal, setOrden, setCarrito} = useCartContext();
   const [nombre, setNombre] = useState("")
   const [telefono, setTelefono] = useState(0)
   const [email, setEmail] = useState("")
