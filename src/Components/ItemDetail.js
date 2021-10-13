@@ -1,4 +1,4 @@
-import {} from 'react-bootstrap'
+
 import ItemCount from "./ItemCount";
 import { useState} from 'react';
 import {Link } from 'react-router-dom';
@@ -11,43 +11,31 @@ export const ItemDetail = ({producto}) => {
     const [buttonIsClicked, setButtonIsClicked] = useState(false)
 
     const onAdd =(cantidad) => {
-             const itemCarrito= {...producto, cantidad}
-             agregarProducto(itemCarrito, cantidad)
+            
+             agregarProducto(producto,cantidad)
              setButtonIsClicked (true)    
 }
     
 return producto.length === 0 ? (
-    <h5>Cargando....</h5>
+    <div className="imgspinner">  <img src="https://th.bing.com/th/id/R.68a0a985a1b931ab4614c29bdf3cfbc9?rik=%2fXbz2OY9VR8y9A&pid=ImgRaw&r=0" alt="" className="spinner"></img></div>
     ): (
-    <div className="container mt-5" align="center">
-        <div className="row">
-            <div className="col-md-12">
-                <table className="table table-dark">
-                    <thead className="thead-white">
-                        <tr> 
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Imagen</th>
-                            <th scope="col">Precio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <tr key ={producto.id}>
-                            <td>{producto.nombre}</td>
-                            <td>{producto.descripcion}</td>
-                            <td><img src={`https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942/${producto.img}`} alt={producto.nombre} className="Imagen"/></td>
-                            <td> ${producto.precio}</td>     
-                    </tr>  
-                    </tbody>
-               </table>
-               <div>
-               {buttonIsClicked ? <Link to="/cart">   <button>Comprar</button> </Link> : <ItemCount  stock ={5} initial ={1} onAdd ={onAdd}/> }
-        
-               </div>
-              
-            </div>
-        </div>
-    </div>    
+
+      <div class="container">
+  <div class="PortadaImagen">
+    <img src={producto.img} alt={producto.nombre} className="imagen2"/>
+  </div>
+  <div class="Nombre-Info">
+    <h4>{producto.nombre}</h4>
+
+    <h6 className="descripcion">{producto.descripcion}</h6>
+  </div>
+  < div class="Precio-Contador">
+  <h4>${producto.precio}</h4>
+  {buttonIsClicked ? <Link className="comprarlink" to="/cart">   <button className="comprarbtn">Comprar</button> </Link>: <ItemCount  stock ={5} initial ={1} onAdd ={onAdd}/> }
+</div>
+</div>
+
+
     )
 }
 export default ItemDetail

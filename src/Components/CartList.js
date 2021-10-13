@@ -1,32 +1,37 @@
-import {} from 'react-bootstrap'
+import {FaTrashAlt} from "react-icons/fa"
 
-const CartList = ({ producto, eliminarProducto}) => {
+
+const CartList = ({ itemCarrito, eliminarProducto}) => {
 
   return (
-    <div className="container mt-5" align="center">
-    <div div className="row">
-        <div className="col-md-12">
-            <table className="table table-dark">
-                
-                <tbody>
-                        <tr key ={producto.id}>
-                        <td>{producto.producto.nombre}</td>
-                        
-                        <td><img src={`https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942/${producto.img}`} alt={producto.nombre} className="Imagen"/></td>
-                        <td> {producto.cantidad} x  $ {producto.producto.precio}</td> 
-                        <td> <span> $ {parseInt(producto.producto.precio) * parseInt(producto.cantidad).toFixed(2)}</span> </td>    
-                        </tr>
-             
-                </tbody>
-           </table>
-           <div>
- 
-        <button onClick={() => {
-            eliminarProducto(producto.id); }}> X </button>
+
+<div>
+<div class="container2">
+  <div class="Imagen">
+  <img src= {itemCarrito.producto.img} alt={itemCarrito.producto.nombre} className="imagen4"/>
+  <div><h5 className="producto.nombre" style={{textAlign:'center'}}>{itemCarrito.producto.nombre}</h5></div>
+  
+  </div>
+  <div class="Cantidadprecio">
+    <div class="Cantidad"><h5>Cantidad</h5></div>
+    <div class="Subtotal"><h5>Subtotal</h5></div>
+    <div class="Borrar"><h5>Borrar</h5></div>
+    <div class="Cantpreciounit">
+    <h5>{itemCarrito.cantidad} x  AR$ {itemCarrito.producto.precio}</h5>
     </div>
+    <div class="PrecioSubtotal">
+    <h5> AR$ {parseInt(itemCarrito.producto.precio) * parseInt(itemCarrito.cantidad).toFixed(2)}</h5>
+    </div>
+    <div class="BorrarItem" onClick={() => {eliminarProducto(itemCarrito.producto.id); }}><FaTrashAlt/></div>
+
   </div>
-  </div>
-  </div>
+  
+</div>
+
+<hr></hr>
+</div>
+   
+
   );
   
 };

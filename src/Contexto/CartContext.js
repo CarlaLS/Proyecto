@@ -6,10 +6,10 @@ const {Provider} = CartContext
 
 
  export const CustomProvider =({children}) => {
-
+const [orden, setOrden]= useState ('')
 const [carrito, setCarrito] = useState ([])
 
-const agregarProducto = (producto, cantidad,) => {
+const agregarProducto = (producto, cantidad) => {
 
 
     if (inInCart(producto.id)) {
@@ -20,9 +20,7 @@ const agregarProducto = (producto, cantidad,) => {
             
                     e.cantidad += cantidad 
                 
-                    
                 }
-       
     });
         setCarrito (newCarrito);
 
@@ -32,10 +30,8 @@ const agregarProducto = (producto, cantidad,) => {
            
 };
 
-
-
 const eliminarProducto= (id) => {
-    const nuevoestadocarrito= carrito.filter (producto => producto.id !==id )
+    const nuevoestadocarrito= carrito.filter (item => item.producto.id !==id )
     setCarrito (nuevoestadocarrito)
 }
 
@@ -47,16 +43,16 @@ let totalItems = carrito.reduce ((acc, producto) =>{
 
  
 precioTotal = () => {
-const number = carrito.reduce ((acc, producto) => {
-        return acc + parseInt(producto.producto.precio) * parseInt (producto.cantidad);
+const number = carrito.reduce ((acc, item) => {
+        return acc + parseInt(item.producto.precio) * parseInt (item.cantidad);
     }, 0)
-    .toFixed (2);
+    ;
     return number;   
 
 };
 
 const inInCart =(id) => {
-   return carrito.find ((producto) => producto.producto.id === id)
+   return carrito.find ((item) => item.producto.id === id)
 
 }
 
@@ -67,7 +63,10 @@ const CartContext = {
     clear, 
     inInCart,
     precioTotal,
-    totalItems
+    totalItems,
+    setCarrito,
+    orden,
+    setOrden
         
 }
 

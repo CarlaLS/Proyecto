@@ -7,30 +7,38 @@ import ItemDetailContainer from "./Components/ItemDetailContainer";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Cart from "./Components/Cart";
 import CustomProvider from "./Contexto/CartContext";
-
+import CargarProductos from "./Components/CargarProductos";
+import GraciasPorSuCompra from "./Components/GraciasPorSuCompra";
+import FormularioOrden from "./Components/FormularioOrden";
+import Portada from "./Components/Portada";
 
 const App = () => {
     return (
-    <BrowserRouter>
+        <div className="app">
+     <BrowserRouter>
     <CustomProvider>
     <NavBarComponente/>
-        <main>
+    <Portada/>
         <Switch>
            
            <Route path="/" component ={ItemListContainer} exact/>
-           <Route path ="/categoria/:id" component={ItemListContainer}/>
+           <Route path ="/productos/categoria/:id" component={ItemListContainer}/>
    
            <Route path="/item/:id" component = {ItemDetailContainer}/>
            
            < Route path ="/cart/" component = {Cart}/>
-
-           </Switch>
            
-        </main>  
+           < Route path ="/cargar/" component = {CargarProductos}/>
+           < Route path ="/formulario/" component = {FormularioOrden}/>
+           < Route path ="/graciasporsucompra/" component = {GraciasPorSuCompra}/>
+           
+        </Switch>
       
     </CustomProvider>
         
      </BrowserRouter>
+        </div>
+   
         
     )
 }

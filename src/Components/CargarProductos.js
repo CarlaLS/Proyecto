@@ -59,7 +59,7 @@ setNombre (e.target.value)
      }                  
 
     return ( 
-        <div>
+        <div className="cargar">
             <div> <label>Nombre</label> <input onChange={handleNombre}/></div>
             <div> <label>Categoria</label><input onChange={handleCategoria}/></div>
             <div><label>Precio</label><input onChange={handlePrecio}/></div>

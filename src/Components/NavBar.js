@@ -1,34 +1,32 @@
-import { Navbar, Nav } from 'react-bootstrap';
-import CartWidget from './CartWidget';
 import { NavLink } from 'react-router-dom';
+import CartWidget from './CartWidget';
+
 
 
 const NavBarComponente = () => {
 
   return (
-    <header>
-      <div className="header">
-      <NavLink className="navlink" to="/">
-      <h1 className="titulo"> Möne Pret a Porter</h1>
-        <h2 className="titulo">Indumentaria Femenina</h2>
-      </NavLink>
-      </div>
-      
-      <Navbar bg="dark" variant="dark">
+    <div>
+    
+<header>
+  <div>
+  <img src="./img/MONE3.png" alt="" className="logo" ></img>
+  </div>
 
-<Navbar.Brand href="#logo">Logo</Navbar.Brand>
-
-<Nav className="me-auto">
-  <NavLink  className="active"to="/categoria/Abrigos">Abrigos</NavLink>
-  <NavLink  className="active" to="/categoria/Chalecos">Chalecos</NavLink>
-  <NavLink  className="active"to="/categoria/Chalinas">Chalinas</NavLink>
-
-</Nav>
-<CartWidget />
-
-
-</Navbar>
-    </header>
+  <ul className="navbar-ul">
+    <li><NavLink className="navlink" to="/">Inicio</NavLink></li>
+     <li><NavLink className="navlink" to="/">Colección SS22</NavLink>
+    <ul>
+      <li><NavLink className="navlink" to="/productos/categoria/Blazers-Chalecos"> Blazers/Chalecos</NavLink></li>
+      <li><NavLink className="navlink" to="/productos/categoria/Pantalones">Pantalones</NavLink></li>
+    </ul>
+     </li>
+  </ul>
+  <div className="cartwidget"><CartWidget /></div>
+ 
+</header>
+  
+</div>
   )
 }
 

@@ -5,7 +5,7 @@ const CartWidget = () => {
     const {totalItems}= useCartContext();
 
     return ( 
-        <div>
+        <div className="cart">
             {""}
         <Link to = "/cart"><span className="material-icons"> shopping_cart</span>
         {<span className= "total-items">{totalItems}</span>}

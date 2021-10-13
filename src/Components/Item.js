@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom"
 
+
 export const Item =({producto}) => {
 
     return (
-<div className="container mt-5" align="center">
-        <div className="row">
-            <div className="col-md-12">
-                <table className="table table-dark">
-                            <tbody>
-                            <tr key ={producto.id}>
-                            <td>{producto.nombre}</td>
-                            <td><img src={`https://cdn.shopify.com/s/files/1/0035/4671/0061/products/CamillaandMarc_LowRes-79_1200x.jpg?v=1604021942/${producto.img}`} alt={producto.nombre} className="Imagen"/></td>
-                            <td>  <Link to={`/item/${producto.id}`}><button className="ver"> ver más</button></Link></td>
-                    </tr>
-                    </tbody>
-               </table>
-            </div>
-        </div>
-    </div>    
+
+
+    
+    <div className="cardProduct"> 
+     <div><h4 className="producto.nombre">{producto.nombre}</h4></div>
+     <div><img src={producto.img} alt={producto.nombre} className="imagen"/></div>
+    <div className="btn"><Link to={`/item/${producto.id}`}><button className="verMas"> ver más</button></Link></div>
+
+
+    </div>
+     
+
 )
     }
 export default Item
