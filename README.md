@@ -18,7 +18,7 @@ La marca elegida para el proyecto es Möne Pret a Porter.
 - Creacion de la orden de compra.
 - Formulario de Contacto.
 
-###Instrucciones de instalación
+### Instrucciones de instalación
 
 Git v2.31.1 y Node.js v14.17.5 instalados previamente.
 
