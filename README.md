@@ -1,16 +1,16 @@
 ### Proyecto E-commerce
 
-#Möne Pret a Porter
+# Möne Pret a Porter
 El tema elegido para el proyecto es una tienda Online de Ropa Femenina, aplicando la librería de React.
 La marca elegida para el proyecto es Möne Pret a Porter.
 
-##Instalaciones
+## Instalaciones
 -Create-react-app para el armado/organización del proyecto.
 -React-Router-dom para funcionalidad del proyecto.
 -React Icons: utilización de íconos en general.
 -Firebase: para trabajar con la información de los productos y generar órdenes de compra.
 
-###Funcionalidades
+### Funcionalidades
 
 - Catálogo de productos.
 - Se puede filtrar por categorias.
